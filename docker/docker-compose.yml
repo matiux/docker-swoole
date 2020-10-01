@@ -1,0 +1,37 @@
+version: '3.8'
+
+networks:
+  app_net:
+    driver: bridge
+    name: app_net
+
+services:
+
+  php:
+    # env_file:
+    #   - ../.env
+    build: swoole/test
+    hostname: app_hostname
+    volumes:
+      - ../:/var/www
+      - ./data/shell_history:/home/utente/shell_history
+    networks:
+      - app_net
+    environment:
+      HISTFILE: /home/utente/shell_history/.x_history
+      AUTORELOAD_PROGRAMS: "swoole"
+      AUTORELOAD_ANY_FILES: 0
+  
+  # php:
+  #   # env_file:
+  #   #   - ../.env
+  #   build: php/test
+  #   #image: matiux/php:7.3.6-fpm-alpine3.9-dev
+  #   hostname: app_hostname
+  #   volumes:
+  #     - ../:/var/www:cached
+  #     - ./data/shell_history:/home/utente/shell_history
+  #   networks:
+  #     - app_net
+  #   environment:
+  #     - HISTFILE=/home/utente/shell_history/.zsh_history

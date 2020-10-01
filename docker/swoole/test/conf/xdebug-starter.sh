@@ -20,14 +20,11 @@ fi
 #     HOST=`10.254.254.254`
 # fi
 
-#Alpine
-#if [[ -f /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini ]]; then
-#  sed -i "s/xdebug\.remote_host=.*/xdebug\.remote_host=${HOST}/" /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
-#fi
+#Alpine - Debian
+if [[ -f /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini ]]; then
+  sed -i "s/xdebug\.remote_host=.*/xdebug\.remote_host=${HOST}/" /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+fi
 #Ubuntu
 #if [[ -f /etc/php/7.4/mods-available/xdebug.ini ]]; then
 #  sed -i "s/xdebug\.remote_host=.*/xdebug\.remote_host=${HOST}/" /etc/php/7.4/mods-available/xdebug.ini
 #fi
-
-export PHP_IDE_CONFIG="serverName=swoole"
-export XDEBUG_CONFIG="idekey=PHPSTORM remote_host=${HOST} remote_port=9000"
