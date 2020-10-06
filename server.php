@@ -7,7 +7,7 @@ $server->on("start", function (Swoole\Http\Server $server) {
 
 $server->on("request", function (Swoole\Http\Request $request, Swoole\Http\Response $response) {
     $response->header("Content-Type", "text/html");
-    $response->end("<html><body><h1>Hello World..</h1></body></html>");
+    $response->end("<html><body><h1>Hello World</h1></body></html>");
 });
 
 $server->start();
