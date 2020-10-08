@@ -1,9 +1,9 @@
 Configurazioni docker / docker-compose per Swoole
 =====
 
-Per il corretto funzionamento del server con supervisord è necessario creare il file `/var/www/app/server.php`.
+Per il corretto funzionamento del server con supervisord è necessario creare il file `/var/www/server.php`.
 
-`/var/www/app` è la working dir del container php
+`/var/www` è la working dir del container php
 
 Facendo l'up dei containers, il server si avvierà con il seguente script:
 
