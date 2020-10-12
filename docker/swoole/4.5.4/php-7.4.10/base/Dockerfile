@@ -32,7 +32,7 @@ RUN mkdir /home/utente \
     && usermod -a -G www-data utente \
     && chown utente /home/utente
 
-#WORKDIR /var/www/app
+WORKDIR /var/www/app
 
 USER utente
 

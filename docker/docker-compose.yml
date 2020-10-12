@@ -13,7 +13,7 @@ services:
     build: swoole/test
     hostname: app_hostname
     volumes:
-      - ../:/var/www
+      - ../:/var/www/app
       - ./data/shell_history:/home/utente/shell_history
     networks:
       - app_net
@@ -29,7 +29,7 @@ services:
   #   #image: matiux/php:7.3.6-fpm-alpine3.9-dev
   #   hostname: app_hostname
   #   volumes:
-  #     - ../:/var/www:cached
+  #     - ../:/var/www/app:cached
   #     - ./data/shell_history:/home/utente/shell_history
   #   networks:
   #     - app_net
